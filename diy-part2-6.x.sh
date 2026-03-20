@@ -49,6 +49,19 @@ endef
 TARGET_DEVICES += nsy_g68-plus" >> target/linux/rockchip/image/legacy.mk
 
 
+
+
+# 增加bendian_bd-one
+echo -e "\\ndefine Device/bendian_bd-one
+\$(call Device/Legacy/rk3568,\$(1))
+  DEVICE_VENDOR := BenDian
+  DEVICE_MODEL := BD-One
+  DEVICE_DTS := rk3568/rk3568-bendian-bd-one
+  DEVICE_PACKAGES += kmod-nvme kmod-ata-ahci-dwc kmod-hwmon-pwmfan kmod-thermal kmod-switch-rtl8365mb kmod-r8169 kmod-r8125
+endef
+TARGET_DEVICES += bendian_bd-one" >> target/linux/rockchip/image/legacy.mk
+
+
 # 增加nsy_g16-plus
 echo -e "\\ndefine Device/nsy_g16-plus
 \$(call Device/Legacy/rk3568,\$(1))
